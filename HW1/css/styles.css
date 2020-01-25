@@ -1,0 +1,38 @@
+/* colors: GREEN #94A03C, NAVY BLUE #20314B, BEIGE #D2C4A1, ROBINS EGG BLUE #66C6C4, PASTEL BLUE #BFDFE1*/
+
+/* Global Styles 
+-------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #66C6C4;/*robins egg blue*/
+
+}
+
+img {
+    width: 700px;
+}
+
+
+/* About me 
+-------------------------*/
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 35pt;
+    color: #20314B;/*navy blue text*/
+}
+
+body {
+    font-family: 'Lora', serif;
+    font-size: 16pt;
+    color: #20314B;/*navy blue text*/
+}
+
+footer {
+    font-family: 'Pacifico', cursive;
+    color: #20314B;/*navy blue text*/
+}
+
