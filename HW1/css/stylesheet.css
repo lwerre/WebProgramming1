@@ -1,0 +1,19 @@
+/* colors: green #4CB24A, purple #B04AB2 */
+
+/* Global Styles 
+-------------------------*/
+
+body {
+    color: #B04AB2;
+
+}
+
+img {
+    width: 400px;
+}
+
+/* About me 
+-------------------------*/
+body {
+    font-family: 'Bangers', cursive;
+}
