@@ -1,0 +1,191 @@
+/* colors: GREEN #94A03C, NAVY BLUE #20314B, BEIGE #D2C4A1, ROBINS EGG BLUE #66C6C4, PASTEL BLUE #BFDFE1, beige #ccb9a2*/
+/*color palette 2: seafoam green #94c4b9, coral #e99897, pink #ecb3b4, orange #f4a682, brown #5e4942*/
+
+body, html { /*main background color blue #66C6C4*/
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#66C6C4;
+}
+
+#wrap { /*bottom half of the sidebar column*/
+    width:750px;
+    margin:0 auto;
+    background:#94A03C;/*wrap color green to match section color*/
+}
+
+#header { /*Meet Lynn Werre header box*/
+    padding:5px 10px;
+    background:#ccb9a2; /*meet lynn werre box color*/
+    text-align: center;
+    color: #20314B;/*navy blue text*/
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+}
+#nav {
+    padding:5px 10px;
+    background:#BFDFE1; /*nav bar color pastel blue*/
+}
+#nav ul {/*text links in the nav bar (option 1, etc)*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-align: center;
+    color:#94c4b9;
+}
+#nav li {/*nav links*/
+    display:inline;
+    margin:0;
+    padding:0;
+}
+#about { /*about section*/
+    float:left;
+    width:480px;
+    padding:10px;
+    background: #f4a682;/**color orange*/
+    font-family: 'Noto Serif', serif;
+}
+#work { /*see my work section*/
+    float:right;
+    width:230px;
+    padding:10px;
+    background:#94A03C;/*color green*/
+    
+    font-family: 'Noto Serif', serif;
+}
+
+img {
+    width:500px;
+}
+#footer {
+    clear:both;
+    padding:5px 10px;
+    background:#ccb9a2;/*footer box color beige*/
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: #20314B;/*footer text color*/
+}
+#footer p {
+    margin:0;
+}
+h1 { /*meet lynn werre*/
+    margin:0;
+}
+h2 {/*see my work*/
+    margin:0 0 1em;
+}
+
+/*two column responsive layout when screen is less than 600px wide, the columns will stack on top of each other (smart phones and tablets*/
+@media  screen  and (max-width: 959px) {
+/*notice there must be 2 spaces between words; media  screen  and- for this to work!*/
+
+
+#header {
+    background:#ccb9a2;
+    float: none;
+    width: 100%;
+    /*how do I make the screen minimize even more when I narrow the window?*/
+}
+
+#nav {
+    float: none;
+    width: 100%;
+    margin: 0px auto;
+}
+
+#nav ul {/*text links in the nav bar (option 1, etc)*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-align: left;
+    color:#94c4b9;
+}
+#nav li {/*nav links*/
+    display:inline;
+    margin:0;
+    padding:0;
+}
+
+#about {
+    background-color: #f4a682;/*background will stay blue when minimized*/
+    width: 100%;
+    float: none; 
+    min-height: 100px;
+    overflow: hidden;/*allows container to expand and contract to accomodate floating elements*/
+}  
+    
+#work {
+    float: none;
+    width: 100%;
+    min-height: 300px;
+    background: #94A03C;/*background will stay green when minimized*/
+}
+
+#footer {
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+img {
+    width: 100%;
+}
+
+
+@media  screen  and (max-width: 400px;) {
+    
+    #header { /*how to resize header on a smaller screen?*/
+        background:#ccb9a2;
+        float: none;
+        width: 100%;
+       
+    }
+    
+    #nav {
+        float: none;
+        width: 100%;
+        margin: 0px auto;
+    }
+    
+    #nav ul {/*text links in the nav bar (option 1, etc)*/
+        margin:0;
+        padding:0;
+        list-style:none;
+        text-align: left;
+        color:#94c4b9;
+    }
+    #nav li {/*nav links*/
+        display:inline;
+        margin:0;
+        padding:0;
+    }
+    
+    #about {
+        background-color: #f4a682;/*background will stay blue when minimized*/
+        width: 100%;
+        float: none; 
+        min-height: auto;
+        overflow: hidden;/*allows container to expand and contract to accomodate floating elements*/
+         /*how do I make the screen minimize even more when I narrow the window so that the text rearranges itself with the screen?*/
+    }  
+        
+    #work {
+        float: none;
+        width: 100%;
+        min-height: 300px;
+        background: #94A03C;/*background will stay green when minimized*/
+    }
+    
+    #footer {
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+    
+    img {
+        width: 100%;
+        /*how to resize image to adjust to screen size?*/
+    }
+    
+
+}
