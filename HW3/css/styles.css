@@ -16,8 +16,12 @@ body, html { /*main background color blue #66C6C4*/
 
 #header { /*Meet Lynn Werre header box*/
     padding:5px 10px;
-    background:#ccb9a2; /*meet lynn werre box color*/
+    background:#ccb9a2;
+    position:relative;
     text-align: center;
+    margin: auto;
+    max-width: 600px;
+    min-height: 200px;
     color: #20314B;/*navy blue text*/
     font-family: 'Pacifico', cursive;
     font-size: 30px;
@@ -136,8 +140,11 @@ img {
     
     #header { /*how to resize header on a smaller screen?*/
         background:#ccb9a2;
-        float: none;
-        width: 100%;
+        position: relative;
+        text-align: left;
+        margin: auto;
+        max-width: 400px;
+        min-height: 200px;
        
     }
     
