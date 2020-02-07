@@ -123,7 +123,7 @@ h1 {
     background-color: #f4a682;/*background will stay blue when minimized*/
     width: 100%;
     float: none; 
-    min-height: 200px;
+    min-height: auto;
     vertical-align: top;
     /*how do I make the text collapse with the screen?*/
 }  
