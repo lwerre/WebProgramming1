@@ -4,12 +4,11 @@
 body, html { /*main background color blue #66C6C4*/
     margin:0;
     padding:0;
-    color:#000;
     background:#66C6C4;
 }
 
 #wrap { /*bottom half of the sidebar column*/
-    width:750px;
+    width:760px;
     margin:0 auto;
     background:#94A03C;/*wrap color green to match section color*/
 }
@@ -59,7 +58,8 @@ body, html { /*main background color blue #66C6C4*/
 }
 
 img {
-    width:500px;
+    width: 500px;
+    
 }
 #footer {
     clear:both;
