@@ -20,8 +20,8 @@ body, html { /*main background color blue #66C6C4*/
     position:relative;
     text-align: center;
     margin: auto;
-    max-width: 600px;
-    min-height: 200px;
+    max-width: 1000px;
+    min-height: 100px;
     color: #20314B;/*navy blue text*/
     font-family: 'Pacifico', cursive;
     font-size: 30px;
@@ -80,15 +80,23 @@ h2 {/*see my work*/
 }
 
 /*two column responsive layout when screen is less than 600px wide, the columns will stack on top of each other (smart phones and tablets*/
-@media  screen  and (max-width: 959px) {
-/*notice there must be 2 spaces between words; media  screen  and- for this to work!*/
-
+@media screen and (max-width: 600px) {
 
 #header {
     background:#ccb9a2;
     float: none;
     width: 100%;
-    /*how do I make the screen minimize even more when I narrow the window?*/
+    max-height: 50px;
+    text-align: left;
+}
+
+h1 {
+    background: #ccb9a2;
+    text-align: left;
+    width: 100%;
+    color: #20314B;/*navy blue text*/
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
 }
 
 #nav {
@@ -104,6 +112,7 @@ h2 {/*see my work*/
     text-align: left;
     color:#94c4b9;
 }
+
 #nav li {/*nav links*/
     display:inline;
     margin:0;
@@ -114,8 +123,9 @@ h2 {/*see my work*/
     background-color: #f4a682;/*background will stay blue when minimized*/
     width: 100%;
     float: none; 
-    min-height: 100px;
-    overflow: hidden;/*allows container to expand and contract to accomodate floating elements*/
+    min-height: 200px;
+    vertical-align: top;
+    /*how do I make the text collapse with the screen?*/
 }  
     
 #work {
@@ -123,6 +133,7 @@ h2 {/*see my work*/
     width: 100%;
     min-height: 300px;
     background: #94A03C;/*background will stay green when minimized*/
+    vertical-align: top;
 }
 
 #footer {
@@ -133,66 +144,8 @@ h2 {/*see my work*/
 
 img {
     width: 100%;
+    /*how do I make the image resize?*/
 }
 
 
-@media  screen  and (max-width: 400px;) {
-    
-    #header { /*how to resize header on a smaller screen?*/
-        background:#ccb9a2;
-        position: relative;
-        text-align: left;
-        margin: auto;
-        max-width: 400px;
-        min-height: 200px;
-       
-    }
-    
-    #nav {
-        float: none;
-        width: 100%;
-        margin: 0px auto;
-    }
-    
-    #nav ul {/*text links in the nav bar (option 1, etc)*/
-        margin:0;
-        padding:0;
-        list-style:none;
-        text-align: left;
-        color:#94c4b9;
-    }
-    #nav li {/*nav links*/
-        display:inline;
-        margin:0;
-        padding:0;
-    }
-    
-    #about {
-        background-color: #f4a682;/*background will stay blue when minimized*/
-        width: 100%;
-        float: none; 
-        min-height: auto;
-        overflow: hidden;/*allows container to expand and contract to accomodate floating elements*/
-         /*how do I make the screen minimize even more when I narrow the window so that the text rearranges itself with the screen?*/
-    }  
-        
-    #work {
-        float: none;
-        width: 100%;
-        min-height: 300px;
-        background: #94A03C;/*background will stay green when minimized*/
-    }
-    
-    #footer {
-        float: none;
-        width: 100%;
-        text-align: left;
-    }
-    
-    img {
-        width: 100%;
-        /*how to resize image to adjust to screen size?*/
-    }
-    
 
-}
