@@ -43,14 +43,15 @@ body, html { /*main background color blue #66C6C4*/
 }
 #about { /*about section*/
     float:left;
-    width:480px;
+    width:59%;
     padding:10px;
     background: #f4a682;/**color orange*/
     font-family: 'Noto Serif', serif;
 }
+
 #work { /*see my work section*/
     float:right;
-    width:230px;
+    width:29%;
     padding:10px;
     background:#94A03C;/*color green*/
     
@@ -58,7 +59,7 @@ body, html { /*main background color blue #66C6C4*/
 }
 
 img {
-    width: 500px;
+    width: 62%;
     
 }
 #footer {
@@ -79,6 +80,11 @@ h2 {/*see my work*/
     margin:0 0 1em;
 }
 
+
+
+
+
+
 /*two column responsive layout when screen is less than 600px wide, the columns will stack on top of each other (smart phones and tablets*/
 @media screen and (max-width: 600px) {
 
@@ -96,7 +102,7 @@ h1 {
     width: 100%;
     color: #20314B;/*navy blue text*/
     font-family: 'Pacifico', cursive;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #nav {
@@ -125,7 +131,7 @@ h1 {
     float: none; 
     min-height: auto;
     vertical-align: top;
-    /*how do I make the text collapse with the screen?*/
+    /*how do I make the text collapse with the screen?--> answer: change the width to percent in the main about section but when I do this, the divs are messed up and the about section misaligns.*/
 }  
     
 #work {
