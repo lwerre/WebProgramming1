@@ -1,0 +1,294 @@
+<!--dropdown selector form-->
+<!--code for forms from w3 schools-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/*style buttons across top*/
+.button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;/*rounds corners on buttons*/
+  color: white;
+  padding: 15px 32px;/*determines size of button container*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+/*end button styling*/
+body {
+  background-color: lightblue;
+}
+
+/*styling for hover dropdown menu begins here*/
+
+.dropbtn {/*dropdown button color*/
+  background-color: #FF9C33;/*orange*/
+  color: white;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+   
+}
+
+.dropdown {/*how the links display in the dropdown menu*/
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+/*script for dropdown selector menu begins here*/
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1); 
+  
+</style>
+</head>     
+
+<body>
+
+<h1>School Wait List Form</h1>
+
+<p>Click on the school for more information:</p>
+
+
+<form>
+<a href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry" class="button">Hogwarts School of Witchcraft & Wizardry</a>
+<a href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters" class="button">Xaviers School for Gifted Youngsters</a>
+<a href="https://www.ign.com/tv/the-umbrella-academy" class="button">Umbrella Academy</a>
+</form>
+<br>
+
+<!---hiding onclick drop down menu for individual onclick buttons
+<div class="dropdown">
+  <button class="dropbtn">Explore a school:</button>
+  <div class="dropdown-content">
+  <a href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry">Hogwarts Academy of Witchraft & Wizardry</a>
+  <a href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters">The X-Men Academy for Gifted Youngsters</a>
+  <a href="https://www.ign.com/tv/the-umbrella-academy">The Umbrella Academy</a>
+  </div>
+</div>
+<br><br>
+-->
+
+<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<div class="custom-select" style="width:200px;">
+  <select>
+    <option value="0">Select school:</option>
+    <option value="1">Hogwarts School of Witchraft & Wizardry</option>
+    <option value="2">Xaviers School for Gifted Youngsters</option>
+    <option value="3">Umbrella Academy</option>
+    
+  </select>
+</div>
+<br><br>
+
+<!--ask for first name-->
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br><br>
+
+<!--ask for last name-->  
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="fcolor" name="lname"><br><br>
+
+<!--ask for birthdate-->
+<form action="/action_page.php">
+  <label for="birthday">What is their birthdate:</label><br>
+  <input type="date" id="birthday" name="birthday"><br><br><!--breaks create lines between each selection-->
+
+<!--ask for current grade--> 
+  <label for="grade">What is their current grade:</label><br>
+  <input type="text" id="grade" name="grade"><br><br>
+
+<!--ask for favorite animal--> 
+  <label for="fanimal">What is their favorite animal:</label><br>
+  <input type="text" id="fanimal" name="fanimal"><br><br>
+
+<!--ask for favorite color--> 
+  <label for="fsubject">What is their favorite subject:</label><br>
+  <input type="text" id="fsubject" name="fsubject"><br><br>
+
+<!--ask for least favorite vegetable--> 
+  <label for="lfveg">What is their least favorite vegetable:</label><br>
+  <input type="text" id="lfveg" name="lfveg
+  "><br><br>
+
+
+<!--submit button--> 
+ <input type="submit" value="Submit">
+</form>
+
+
+
+
+<script>
+var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
+
+</body>
+</html>
