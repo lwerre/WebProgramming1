@@ -134,6 +134,21 @@ body {
 
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1); 
+}
+  
+  #button {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;/*rounds corners on buttons*/
+ 
+  padding: 15px 32px;/*determines size of button container*/
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 16px;
+  margin: 4px 4px;
+  cursor: pointer;
+}
   
 </style>
 </head>     
@@ -209,7 +224,9 @@ body {
 
 
 <!--submit button--> 
- <input type="submit" value="Submit">
+<div class="button" style="width: 100px">
+<option value="submit">Submit</option>
+</div>
 </form>
 
 
