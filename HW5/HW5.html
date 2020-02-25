@@ -1,0 +1,165 @@
+<!--hw5b-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Us</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main5b.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--stylesheet from w3-school to style buttons-->
+
+</head>
+<body>
+
+<!--container for form title-->
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					School Waitlist Form
+				</span>
+
+<!--explore a school links here-->
+<!--hidden for experimentation
+    <div class="wrap-input100>"
+    <div class="dropdown">
+        <button class="dropbtn">Explore a school:</button>
+            <div class="dropdown-content">
+                <a href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry">Hogwarts School of Witchraft & Wizardry</a><br>
+                <a href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters">The X-Men Academy for Gifted Youngsters</a><br>
+                <a href="https://www.ign.com/tv/the-umbrella-academy">The Umbrella Academy</a><br>
+            </div>
+        </div>
+<br>
+-->
+
+<!--create onlink buttons for exploring schools-->
+<div class="w3-container" id="button">
+<h2>Explore a school:</h2>
+<p>Click on a school to learn more about it:<strong></strong></p>
+<div class="w3-bar">
+  <a class="w3-btn w3-blue w3-round-large" href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry">Hogwarts School of Witchcraft & Wizardry</a>
+  <a class="w3-btn w3-blue w3-round-large" href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters">Xaviers School for Gifted Youngsters</a>
+  <a class="w3-btn w3-blue w3-round-large" href="https://www.ign.com/tv/the-umbrella-academy">Umbrella Academy</a>
+  
+</div>
+</div>
+<br>
+<br>
+
+
+<!--select a school dropdown menu here-->
+
+	<div class="wrap-input100"><!--wrap-input keeps the form in the center div-->
+			<div>
+				<select class="js-select2" name="service">
+					<option>Choose a school to be put on the waitlist:</option>
+					<option>Hogwarts School of Wizardry & Witchcraft</option>
+					<option>Xaviers Academy for Gifted Youngsters</option>
+					<option>The Umbrella Academy</option>
+				</select>
+				<div class="dropDownSelect2"></div>
+				</div>
+				<span class="focus-input100"></span>
+			</div>
+
+<!--input boxes-->
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Student Name</span>
+					<input class="input100" type="text" name="name" placeholder="Enter student name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Enter current grade">
+					<span class="label-input100">Student Current Grade</span>
+					<input class="input100" type="text" name="grade" placeholder="Student Current Grade">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">Message</span>
+					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+<!--submit button-->
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
