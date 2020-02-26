@@ -1,371 +1,165 @@
-<!--dropdown selector form-->
-<!--code for forms from w3 schools-->
-
+<!--hw5b-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--font styling-->
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-<style>
+	<title>Contact Us</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main5b.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--stylesheet from w3-school to style buttons-->
 
-h1 {
-  text-align: center;
-}
-
-p {
-  text-align: left;
-}
-
-
-/*style buttons across top (school choice*/
-.button {
-  font-family: 'Montserrat', ;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;/*rounds corners on buttons*/
-  color: white;
-  padding: 15px 32px;/*determines size of button container*/
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 4px;
-  cursor: pointer;
-  
-}
-
-/*end button styling*/
-body {
-  background-color: lightblue;
-  font-family: 'Montserrat';
-}
-
-/*styling for hover dropdown menu begins here*/
-
-.dropbtn {/*dropdown button color*/
-  background-color: #FF9C33;/*DodgerBlue*/
-  color: white;
-  padding: 16px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
- 
-  border-radius: 8px;/*rounds corners on buttons*/ 
-}
-
-.dropdown {/*how the links display in the dropdown menu*/
-  position: relative;
-  display: inline-block;
-  border-radius: 8px;/*rounds corners on buttons*/
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 8px;/*rounds corners on buttons*/
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-
-
-/*script for dropdown selector menu begins here*/
-/*the container must be positioned relative:*/
-.custom-select {
-  position: relative;
-  font-family: 'Montserrat';
-}
-
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-  text-align: center;
-}
-
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-/*style items (options):*/
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/*hide the items when the select box is closed:*/
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1); 
-}
-
-#button {
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;/*rounds corners on buttons*/
- 
-  padding: 15px 32px;/*determines size of button container*/
-  text-align: center;
-  text-decoration: none;
-  
-  font-size: 16px;
-  margin: 4px 4px;
-  cursor: pointer;
-}
-
-/*centers form
-form {  
-   max-width: 600px;
-   text-align: center;
-   margin: 20px auto;
-*/
-
-/*formats the input text boxes*/
-input, textarea { 
-     border:0; outline:0;
-     border-radius: 8px;/*rounds corners on buttons*/
-     padding: 1em;
-     @include border-radius(8px);
-     display: block;
-     width: 400px;
-     margin-top: 1em;
-     font-family: 'Merriweather', sans-serif;
-     @include box-shadow(0 1px 1px rgba(black, 0.1));
-     resize: none;
-     
-     
-    &:focus {
-       @include box-shadow(0 0px 2px rgba($red, 1)!important);
-    }
-  }
-
- /*formats submit button*/
-  #input-submit {
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;/*rounds corners on buttons*/
-  color: white;
-  padding: 15px 32px;/*determines size of button container*/
-  text-align: center;
-  text-decoration: none;
- 
-  font-size: 16px;
-  margin: 4px 4px;
-  cursor: pointer;
-  }
-    
-    &:hover {
-       @include box-shadow(0 1px 1px 1px rgba(#aaa, 0.6)); 
-    }
-  }
-
-
-</style>
-</head>     
-
+</head>
 <body>
 
-<h1>School Wait List Form</h1>
+<!--container for form title-->
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					School Waitlist Form
+				</span>
 
-<p>Click on the school for more information:</p>
-
-
-<form>
-<a href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry" class="button">Hogwarts School of Witchcraft & Wizardry</a>
-<a href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters" class="button">Xaviers School for Gifted Youngsters</a>
-<a href="https://www.ign.com/tv/the-umbrella-academy" class="button">Umbrella Academy</a>
-</form>
+<!--explore a school links here-->
+<!--hidden for experimentation
+    <div class="wrap-input100>"
+    <div class="dropdown">
+        <button class="dropbtn">Explore a school:</button>
+            <div class="dropdown-content">
+                <a href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry" >Hogwarts School of Witchraft & Wizardry</a><br>
+                <a href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters">The X-Men Academy for Gifted Youngsters</a><br>
+                <a href="https://www.ign.com/tv/the-umbrella-academy">The Umbrella Academy</a><br>
+            </div>
+        </div>
 <br>
-
-<!---hiding onclick drop down menu for individual onclick buttons
-<div class="dropdown">
-  <button class="dropbtn">Explore a school:</button>
-  <div class="dropdown-content">
-  <a href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry">Hogwarts Academy of Witchraft & Wizardry</a>
-  <a href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters">The X-Men Academy for Gifted Youngsters</a>
-  <a href="https://www.ign.com/tv/the-umbrella-academy">The Umbrella Academy</a>
-  </div>
-</div>
-<br><br>
 -->
 
-<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-<div class="custom-select" style="width:200px;">
-  <select>
-    <option value="0">Select school:</option>
-    <option value="1">Hogwarts School of Witchraft & Wizardry</option>
-    <option value="2">Xaviers School for Gifted Youngsters</option>
-    <option value="3">Umbrella Academy</option>
-    
-  </select>
+<!--create onlink buttons for exploring schools-->
+<div class="w3-container" id="button">
+<h2>Explore a school:</h2>
+<p>Click on a school to learn more about it:<strong></strong></p>
+<div class="w3-bar">
+  <a class="w3-btn w3-blue w3-round-large" href="https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry" target="blank">Hogwarts School of Witchcraft & Wizardry</a>
+  <a class="w3-btn w3-blue w3-round-large" href="https://marvel.fandom.com/wiki/Xavier%27s_School_for_Gifted_Youngsters" target="blank">Xaviers School for Gifted Youngsters</a>
+  <a class="w3-btn w3-blue w3-round-large" href="https://www.ign.com/tv/the-umbrella-academy" target="blank">Umbrella Academy</a>
+  <!--target="blank" allows the link to open up a new tab when clicked on-->
 </div>
-<br><br>
-
-<!--ask for first name-->
-<form action="/action_page.php">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname"><br><br>
-
-<!--ask for last name-->  
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="fcolor" name="lname"><br><br>
-
-<!--ask for birthdate-->
-<form action="/action_page.php">
-  <label for="birthday">What is their birthdate:</label><br>
-  <input type="date" id="birthday" name="birthday"><br><br><!--breaks create lines between each selection-->
-
-<!--ask for current grade--> 
-  <label for="grade">What is their current grade:</label><br>
-  <input type="text" id="grade" name="grade"><br><br>
-
-<!--ask for favorite animal--> 
-  <label for="fanimal">What is their favorite animal:</label><br>
-  <input type="text" id="fanimal" name="fanimal"><br><br>
-
-<!--ask for favorite color--> 
-  <label for="fsubject">What is their favorite subject:</label><br>
-  <input type="text" id="fsubject" name="fsubject"><br><br>
-
-<!--ask for least favorite vegetable--> 
-  <label for="lfveg">What is their least favorite vegetable:</label><br>
-  <input type="text" id="lfveg" name="lfveg
-  "><br><br>
+</div>
+<br>
+<br>
 
 
-<!--submit button--> 
-<input type="submit" value="Submit" id="input-submit">
-</form>
+<!--select a school dropdown menu here-->
+
+	<div class="wrap-input100"><!--wrap-input keeps the form in the center div-->
+			<div>
+				<select class="js-select2" name="service">
+					<option>Choose a school to be put on the waitlist:</option>
+					<option>Hogwarts School of Wizardry & Witchcraft</option>
+					<option>Xaviers Academy for Gifted Youngsters</option>
+					<option>The Umbrella Academy</option>
+				</select>
+				<div class="dropDownSelect2"></div>
+				</div>
+				<span class="focus-input100"></span>
+			</div>
+
+<!--input boxes-->
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Student Name</span>
+					<input class="input100" type="text" name="name" placeholder="Enter student name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Enter current grade">
+					<span class="label-input100">Student Current Grade</span>
+					<input class="input100" type="text" name="grade" placeholder="Student Current Grade">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">Message</span>
+					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+<!--submit button-->
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 
 
+	<div id="dropDownSelect1"></div>
 
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
-var x, i, j, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < selElmnt.length; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
 </script>
 
 </body>
