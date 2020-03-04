@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<p>Florida State Math Standards:</p>
+
+<!--first standard button-->
+<button onclick="myFunction()">MAFS.4.OA.1.1</button>
+
+<!--first standard descriptions that display onclick-->
+<div class="row" id="myDIV">
+    <div id="standard1">
+    <h4>MAFS.4.OA.1.1</h4>
+    <p>Description: Interpret a multiplication equation as a comparison</p>
+    <p>Example: interpret 35 = 5 x 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.</p>
+    <p>Cognitive Complexity Level: Level 1: Recall</p>
+    </div>
+</div>
+
+<!--second standard button-->
+<button onclick="myFunction()">MAFS.4.OA.1.2</button>
+
+<!--second standard descriptions that display onclick-->
+<div id="myDIV2">
+    
+        <div id="standard">
+        <p>MAFS.4.OA.1.2</p>
+        <p>Description: Multiply or divide to solve word problems involving multiplicative comparison</p>
+        <p>using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.</p>
+        <p>Level 2: Basic Application of Skills & Concepts.</p>
+        </div>
+</div>
+<!--second div won't close onclick-->
+
+<script>
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
