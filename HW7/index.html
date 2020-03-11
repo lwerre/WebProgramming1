@@ -31,88 +31,73 @@
     </style>
 
     <script>
-        // create flower objects
-        function Flower(fm) {//change fm name to Flower
-            
-            // constructor
-            this.name = fm.name.value;
-            this.email = fm.email.value;
-            //this.age = Number(fm.age.value);
-            this.recipient1 = fm.recipient1.checked; // friend
-            this.recipient2 = fm.recipient2.checked; // romantic partner
-            this.recipient3 = fm.recipient3.checked; // business associate
-            this.occasion1 = fm.occasion1.checked; // made a mistake
-            this.occasion2 = fm.occasion2.checked; // appreciation
-            this.occasion3 = fm.occasion3.checked; //special occasion1
-
-            // return potential severity color of this case
-            this.severity = function () {
-                // recipient1 (friend) + occasion1 (i made a mistake)
-                if (this.recipient1 && this.occasion1) {
-                    return "#e99883"; // high red
-                // recipient1 (friend) + occassion2 (I want to show my appreciation)
-                } else if (this.recipient1 && this.occasion2) {
-                    return "#f1f0a3"; // medium yellow
-                /* if any of the symptoms are present
-                } else if (this.symptom1 || this.symptom2 || this.symptom3) {
-                    return "#caeeca"; // low green
-                } else { // gray
-                    return "#dddddd";
-                }
-            }
-            */
-
-            // return recommendation text
-            this.recommendation = function () {
-                // if the flowers are for a friend and they have made a mistake
-                if (this.recipient1 && this.occasion1) {
-                    return "You should send a bouquet of roses with a box of chocolates";
-                }
-                    else (this.recipient1 && this.occasion2)  /*if the flowers are for a friend and you would like to show your appreciation*/
-                        return "You should send orchids to express your appreciation.";
-                    }
-                        
-                    
-                /* if all three symptoms and any one of the risk factors are present
-                if (this.symptom1 && this.symptom2 && this.symptom3 && (this.risk1 || this.risk2)) {
-                    if (this.age == 65) { // elderly are at much higher risk
-                        return "Call your local emergency services immediately!";
-                    } else {
-                        return "Call the CDC COVID-19 hotline at 555-555-5555 immediately!";
-                    }
-                // if all three symptoms are present but NOT risk factors
-                } else if (this.symptom1 && this.symptom2 && this.symptom3 && !(this.risk1 || this.risk2)) {
-                    return "Stay home and monitor your symptoms. Contact your physician if the symptoms persist.";              
-                // if any of the symptoms are present and they have any risk factors
-                } else if ((this.symptom1 || this.symptom2 || this.symptom3) && (this.risk1 || this.risk2) ) {
-                    return "PLEASE STAY HOME! If you get any more symptoms then contact the CDC COVID-19 hotline at 555-555-5555!";
-                // if they have ANY symptoms at all (but not risk factors)
-                } else if (this.symptom1 || this.symptom2 || this.symptom3) {
-                    return "If you get any more symptoms or if your current symptoms get worse then contact your physician.";       
-                } else { // low virus threat
-                    return "You seem to be fine.  Keep washing your hands!";
-                }
-            }
-
+        
+<script>
+// defining the object: flower form
+function Flower (fm) {
+    this.name = fm.name.value;
+    this.email = fm.email.value;
+    this.friend = fm.friend.checked; //recipient is a friend 
+    this.romance = fm.romance.checked; //recipient is a romantic partner
+    this.business = fm.business.checked; // recipient is a business associate
+    this.occasion1 = fm.occasion1.checked; // I made a horrible mistake
+    this.occasion2 = fm.occasion2.checked; // I want to show appreciation
+    this.occasion3 = fm.occasion3.checked; // It is a special occasion
+ 
+// return box colors
+    this.order = function () {
+        // recipient is friend and I made a mistake 
+        if (this.friend && (this.occasion2 || this.occasion3)) {
+            return #ECFF33; //yellow
         }
-*/
-function process_form() {
-    // get form object
-    var fm = document.getElementById("my_form");
+        //recipient is friend and I want to show appreciation 
+        if (this.friend && (this.occasion1 || this.occasion3)) {
+            return #F153EA; //purple
+        }
+        //recipient is romantic partner and I made a mistake 
+        if (this.romance && (this.occasion2 || this.occasion3)) {
+            return #F90808; //red
+        }
 
-    // get output object
-    var out = document.getElementById("output");
+        //if recipient is romantic partner and I want to show appreciations
+        if (this.romance && (this.occasion1 || this.occasion3)) {
+            return #F9085D; //pink
+        }
+    
+    }
+//return box text 
+    this.suggestion = function () {
+        //friend + mistake 
+        if (this.friend && this.occasion1) {
+            return "We recommend sending a bouquet of daisies and lilies to your friend to represent your remorse and friendship.";
+            }
 
-    // instantiate patient object
-    var flower = new Flower(fm);
-    //console.log("Debug:" + JSON.stringify(patient));
+        //romance + mistake 
+        if (this.romance + this.occasion1) {
+            return "We recommend sending a dozen red roses and a box of chocolates to convey your remorse."
+            }
 
-            // set background color using patient object severity method
-            out.style.background = flower.severity();
-            //display recommendations based on input values using diagnose method
-            out.innerHTML = flower.recommendation();
-  }
+        //friend + appreciation
+        if (this.friend && this.occasion2) {
+            return "We recommend sending an arrangement of orchids and lilies to express your appreciation."
+            } 
+        
+        //romance + appreciations
+        if (this.romance && this.occasion2) {
+            return "We recommend a bouquet of orchids and red roses to express your love and appreciation."
+            }
+    }
+}
 
+// process form
+function process_form () {
+    var fm = document.getElementByID("orderform");
+    var out = document.getElementByID("output");
+    
+    
+    var Flower = new Flower (fm); 
+    out.style.background = Flower.order ();
+    out.innerHTML = Flower.suggestion ();
 }
 </script>
 
@@ -166,13 +151,14 @@ function process_form() {
             </div>
 
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="occasion2">
+                <input type="checkbox" class="form-check-input" id="occasion3">
                 <label class="form-check-label" for="occasion2">This is for a special occasion.</label>
             </div>
 
 
 
-            <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button><!--console says process_fm() is not defined?-->
+            <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button><!--console says process_form
+            () is not defined?-->
             
             <!-- recommendation output area -->
             <div id="output">
