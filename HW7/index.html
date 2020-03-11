@@ -29,6 +29,7 @@
             font-size: x-large;
         }
     </style>
+
     <script>
         // create flower objects
         function Flower(fm) {//change fm name to Flower
@@ -67,11 +68,11 @@
                 if (this.recipient1 && this.occasion1) {
                     return "You should send a bouquet of roses with a box of chocolates";
                 }
-                    else (this.recipient1 && this.occasion2) {
+                    else (this.recipient1 && this.occasion2)  /*if the flowers are for a friend and you would like to show your appreciation*/
                         return "You should send orchids to express your appreciation.";
                     }
                         
-                    }
+                    
                 /* if all three symptoms and any one of the risk factors are present
                 if (this.symptom1 && this.symptom2 && this.symptom3 && (this.risk1 || this.risk2)) {
                     if (this.age == 65) { // elderly are at much higher risk
@@ -95,21 +96,26 @@
 
         }
 */
-        function process_form() {
-            // get form object
-            var fm = document.getElementById("my_form");
-            // get output object
-            var out = document.getElementById("output");
-            // instantiate patient object
-            var flower = new Flower(fm);
-            //console.log("Debug:" + JSON.stringify(patient));
+function process_form() {
+    // get form object
+    var fm = document.getElementById("my_form");
+
+    // get output object
+    var out = document.getElementById("output");
+
+    // instantiate patient object
+    var flower = new Flower(fm);
+    //console.log("Debug:" + JSON.stringify(patient));
 
             // set background color using patient object severity method
             //out.style.background = patient.severity();
-            // display recommendations based on input values using diagnose method
-            //out.innerHTML = patient.diagnose();
-        }
-    </script>
+            //display recommendations based on input values using diagnose method
+            out.innerHTML = flower.recommendation();
+  }
+
+}
+</script>
+
 </head>
 
 <body>
@@ -132,6 +138,7 @@
 
             <h4>Please check all that apply so that we can arrange a beautiful bouquet, personalized for your needs:</h4>
             <br>
+            <h3>Who are the flowers for?</h3>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="recipient1">
                 <label class="form-check-label" for="recipient1">These flowers are for a friend</label>
@@ -147,7 +154,8 @@
             </div>
             -->
 
-            <!-- choose an occassion -->
+            <!-- choose an occasion -->
+            <h3>What is the reason for sending flowers?</h3>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="occasion1">
                 <label class="form-check-label" for="occasion1">I made a horrible mistake and I am trying to fix it.</label>
@@ -164,11 +172,11 @@
 
 
 
-            <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button><!--console says process_fm() is not defined?-->
             
             <!-- recommendation output area -->
             <div id="output">
-
+            <h3>We recommend sending</h3>
             </div>
 
         </form>
