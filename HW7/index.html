@@ -30,42 +30,42 @@
         }
     </style>
 
-    <script>
-        
+   
 <script>
 // defining the object: flower form
-function Flower (fm) {
+function Flower(fm) {
     this.name = fm.name.value;
     this.email = fm.email.value;
     this.friend = fm.friend.checked; //recipient is a friend 
     this.romance = fm.romance.checked; //recipient is a romantic partner
+    
     this.occasion1 = fm.occasion1.checked; // I made a horrible mistake
     this.occasion2 = fm.occasion2.checked; // I want to show appreciation
-    
+   
  
 // return box colors
-    this.order = function () {
+    this.order = function() {
         // recipient is friend and I made a mistake 
-        if (this.friend && this.occasion1) {
-            return #ECFF33; //yellow
+        if (this.friend && (this.occasion2 || this.occasion3)) {
+            return "#ECFF33"; //yellow
         }
         //recipient is friend and I want to show appreciation 
-        if (this.friend && this.occasion2) {
-            return #F153EA; //purple
+        if (this.friend && (this.occasion1 || this.occasion3)) {
+            return "#F153EA"; //purple
         }
         //recipient is romantic partner and I made a mistake 
-        if (this.romance && this.occasion1) {
-            return #F90808; //red
+        if (this.romance && (this.occasion2 || this.occasion3)) {
+            return "#F90808"; //red
         }
 
-        //if recipient is romantic partner and I want to show appreciation
-        if (this.romance && this.occasion2) {
-            return #F9085D; //pink
+        //if recipient is romantic partner and I want to show appreciations
+        if (this.romance && (this.occasion1 || this.occasion3)) {
+            return "#F9085D"; //pink
         }
     
     }
 //return box text 
-    this.suggestion = function () {
+    this.suggestion = function() {
         //friend + mistake 
         if (this.friend && this.occasion1) {
             return "We recommend sending a bouquet of daisies and lilies to your friend to represent your remorse and friendship.";
@@ -73,30 +73,30 @@ function Flower (fm) {
 
         //romance + mistake 
         if (this.romance + this.occasion1) {
-            return "We recommend sending a dozen red roses and a box of chocolates to convey your remorse."
+            return "We recommend sending a dozen red roses and a box of chocolates to convey your remorse.";
             }
 
         //friend + appreciation
         if (this.friend && this.occasion2) {
-            return "We recommend sending an arrangement of orchids and lilies to express your appreciation."
+            return "We recommend sending an arrangement of orchids and lilies to express your appreciation.";
             } 
         
         //romance + appreciations
         if (this.romance && this.occasion2) {
-            return "We recommend a bouquet of orchids and red roses to express your love and appreciation."
+            return "We recommend a bouquet of orchids and red roses to express your love and appreciation.";
             }
     }
 }
 
 // process form
-function process_form () {
-    var fm = document.getElementByID("orderform");
-    var out = document.getElementByID("output");
+function process_form() {
+    var fm = document.getElementById("my_form");
+    var out = document.getElementById("output");
     
     
-    var Flower = new Flower (fm); 
-    out.style.background = Flower.order ();
-    out.innerHTML = Flower.suggestion ();
+    var flower = new Flower (fm); 
+    out.style.background = flower.order ();
+    out.innerHTML = flower.suggestion ();
 }
 </script>
 
@@ -123,20 +123,19 @@ function process_form () {
             <h4>Please check all that apply so that we can arrange a beautiful bouquet, personalized for your needs:</h4>
             <br>
             <h3>Who are the flowers for?</h3>
+
+            <!--friend-->
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="recipient1">
-                <label class="form-check-label" for="recipient1">These flowers are for a friend</label>
+                <input type="checkbox" class="form-check-input" id="friend">
+                <label class="form-check-label" for="friend">These flowers are for a friend</label>
             </div>
+            <!--romance-->
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="recipient2">
-                <label class="form-check-label" for="recipient2">These flowers are for a romantic partner</label>
-            </div>
-            
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="recipient3">
-                <label class="form-check-label" for="recipient3">These flowers are for a business associate</label>
+                <input type="checkbox" class="form-check-input" id="romance">
+                <label class="form-check-label" for="romance">These flowers are for a romantic partner</label>
             </div>
             
+                  
 
             <!-- choose an occasion -->
             <h3>What is the reason for sending flowers?</h3>
@@ -144,15 +143,13 @@ function process_form () {
                 <input type="checkbox" class="form-check-input" id="occasion1">
                 <label class="form-check-label" for="occasion1">I made a horrible mistake and I am trying to fix it.</label>
             </div>
+
+            <!--occasion2-->
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="occasion2">
                 <label class="form-check-label" for="occasion2">I would like to express my appreciation.</label>
             </div>
-
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="occasion3">
-                <label class="form-check-label" for="occasion2">This is for a special occasion.</label>
-            </div>
+     
 
 
 
@@ -161,7 +158,7 @@ function process_form () {
             
             <!-- recommendation output area -->
             <div id="output">
-            <h3>We recommend sending</h3>
+           
             </div>
 
         </form>
