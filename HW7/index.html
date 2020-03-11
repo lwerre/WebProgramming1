@@ -39,28 +39,27 @@ function Flower (fm) {
     this.email = fm.email.value;
     this.friend = fm.friend.checked; //recipient is a friend 
     this.romance = fm.romance.checked; //recipient is a romantic partner
-    this.business = fm.business.checked; // recipient is a business associate
     this.occasion1 = fm.occasion1.checked; // I made a horrible mistake
     this.occasion2 = fm.occasion2.checked; // I want to show appreciation
-    this.occasion3 = fm.occasion3.checked; // It is a special occasion
+    
  
 // return box colors
     this.order = function () {
         // recipient is friend and I made a mistake 
-        if (this.friend && (this.occasion2 || this.occasion3)) {
+        if (this.friend && this.occasion1) {
             return #ECFF33; //yellow
         }
         //recipient is friend and I want to show appreciation 
-        if (this.friend && (this.occasion1 || this.occasion3)) {
+        if (this.friend && this.occasion2) {
             return #F153EA; //purple
         }
         //recipient is romantic partner and I made a mistake 
-        if (this.romance && (this.occasion2 || this.occasion3)) {
+        if (this.romance && this.occasion1) {
             return #F90808; //red
         }
 
-        //if recipient is romantic partner and I want to show appreciations
-        if (this.romance && (this.occasion1 || this.occasion3)) {
+        //if recipient is romantic partner and I want to show appreciation
+        if (this.romance && this.occasion2) {
             return #F9085D; //pink
         }
     
