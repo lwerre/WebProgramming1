@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<!-- this is week 7 in-class example of JS object implementation, forms, bootstrap, etc. -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Week 7</title>
+    <style>
+    /*css styling goes here*/
+
+        #container {
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        /* using CSS box model */
+        #output {
+            border: 15px;
+            padding: 20px;
+            margin: 20px;
+            margin-top: 1%;
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>
+    <script>
+        // create flower objects
+        function Flower(fm) {//change fm name to Flower
+            
+            // constructor
+            this.name = fm.name.value;
+            this.email = fm.email.value;
+            //this.age = Number(fm.age.value);
+            this.recipient1 = fm.recipient1.checked; // friend
+            this.recipient2 = fm.recipient2.checked; // romantic partner
+            this.recipient3 = fm.recipient3.checked; // business associate
+            this.occasion1 = fm.occasion1.checked; // made a mistake
+            this.occasion2 = fm.occasion2.checked; // appreciation
+            this.occasion3 = fm.occasion3.checked; //special occasion1
+
+            // return potential severity color of this case
+            /*this.severity = function () {
+                // if all three symptoms and any one of risk factors are present
+                if (this.symptom1 && this.symptom2 && this.symptom3 && (this.risk1 || this.risk2)) {
+                    return "#e99883"; // high red
+                // if all three symptoms are present but NOT the risk factors
+                } else if (this.symptom1 && this.symptom2 && this.symptom3 && !(this.risk1 || this.risk2)) {
+                    return "#f1f0a3"; // medium yellow
+                // if any of the symptoms are present
+                } else if (this.symptom1 || this.symptom2 || this.symptom3) {
+                    return "#caeeca"; // low green
+                } else { // gray
+                    return "#dddddd";
+                }
+            }
+            */
+
+            // return recommendation text
+            this.recommendation = function () {
+                // if the flowers are for a friend and they have made a mistake
+                if (this.recipient1 && this.occasion1) {
+                    return "You should send a bouquet of roses with a box of chocolates";
+                }
+                    else (this.recipient1 && this.occasion2) {
+                        return "You should send orchids to express your appreciation.";
+                    }
+                        
+                    }
+                /* if all three symptoms and any one of the risk factors are present
+                if (this.symptom1 && this.symptom2 && this.symptom3 && (this.risk1 || this.risk2)) {
+                    if (this.age == 65) { // elderly are at much higher risk
+                        return "Call your local emergency services immediately!";
+                    } else {
+                        return "Call the CDC COVID-19 hotline at 555-555-5555 immediately!";
+                    }
+                // if all three symptoms are present but NOT risk factors
+                } else if (this.symptom1 && this.symptom2 && this.symptom3 && !(this.risk1 || this.risk2)) {
+                    return "Stay home and monitor your symptoms. Contact your physician if the symptoms persist.";              
+                // if any of the symptoms are present and they have any risk factors
+                } else if ((this.symptom1 || this.symptom2 || this.symptom3) && (this.risk1 || this.risk2) ) {
+                    return "PLEASE STAY HOME! If you get any more symptoms then contact the CDC COVID-19 hotline at 555-555-5555!";
+                // if they have ANY symptoms at all (but not risk factors)
+                } else if (this.symptom1 || this.symptom2 || this.symptom3) {
+                    return "If you get any more symptoms or if your current symptoms get worse then contact your physician.";       
+                } else { // low virus threat
+                    return "You seem to be fine.  Keep washing your hands!";
+                }
+            }
+
+        }
+*/
+        function process_form() {
+            // get form object
+            var fm = document.getElementById("my_form");
+            // get output object
+            var out = document.getElementById("output");
+            // instantiate patient object
+            var flower = new Flower(fm);
+            //console.log("Debug:" + JSON.stringify(patient));
+
+            // set background color using patient object severity method
+            //out.style.background = patient.severity();
+            // display recommendations based on input values using diagnose method
+            //out.innerHTML = patient.diagnose();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>The Language of Flowers Order Form</h1>
+        <form id="my_form">
+            <!-- individual info -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone
+                    else.</small>
+            </div>
+
+           <!--choose a the recipient of the flowers -->
+
+            <h4>Please check all that apply so that we can arrange a beautiful bouquet, personalized for your needs:</h4>
+            <br>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="recipient1">
+                <label class="form-check-label" for="recipient1">These flowers are for a friend</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="recipient2">
+                <label class="form-check-label" for="recipient2">These flowers are for a romantic partner</label>
+            </div>
+            
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="recipient3">
+                <label class="form-check-label" for="recipient3">These flowers are for a business associate</label>
+            </div>
+            -->
+
+            <!-- choose an occassion -->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="occasion1">
+                <label class="form-check-label" for="occasion1">I made a horrible mistake and I am trying to fix it.</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="occasion2">
+                <label class="form-check-label" for="occasion2">I would like to express my appreciation.</label>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="occasion2">
+                <label class="form-check-label" for="occasion2">This is for a special occasion.</label>
+            </div>
+
+
+
+            <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button>
+            
+            <!-- recommendation output area -->
+            <div id="output">
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
