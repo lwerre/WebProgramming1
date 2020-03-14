@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+<!--javascript to add a student to a waitlist-->
+
+<script type="text/javascript"> //create array of students currently on the waitlist
+    /*                       0            1             2      */
+    var waitlist = [ "Jean Gray", "Rogue", "Cyclops"];
+    
+    function showClass()
+    {
+       document.getElementById("demo").innerHTML = "Students currently on the waitlist:  " + waitlist; 
+        
+    }
+    
+      function addStudent()
+    {
+        //waitlist[waitlist.length] = prompt("Who is the new student");
+        waitlist.push(prompt("Who is the new student"));
+        showClass();        
+    }
+    
+  </script>
+
+
+
+</head>
+<body>
+<body onload="showClass()">
+<!--background container-->
+	<div class="bg-contact3" style="background-image: url('images/education.jpg');">
+		<div class="container-contact3">
+			<div class="wrap-contact3">
+				<form class="contact3-form validate-form">
+					<span class="contact3-form-title">
+						Add your student to the waitlist
+					</span>
+
+<!--this is where the output of waitlisted names goes-->
+<p id="demo">Please add your student to the waitlist</p>
+        
+
+<!--add student to waitlist button-->
+<div id="button" div class="center">
+      <input type= "button" value="addStudent" id="addStudent" onClick ="addStudent()" align="center"><br><br>
+
+					
+    </body>
+
+</html>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
