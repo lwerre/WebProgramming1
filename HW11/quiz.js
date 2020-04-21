@@ -36,7 +36,7 @@ function Book(fm) {
         } else if (this.input_power == 'knowledge' && this.input_character == 'nd' && this.input_animal == 'yes')
             return 1; //knowledge, nd, yes -> Mystery
         } else if (this.input_power == 'knowledge' && this.input_character == 'nd' && this.input_animal == 'no')
-            return 1; //knowledge, nd, no->mystery 
+            return 1; //knowledge, nd, no->mystery */
     }
         
 // Arrays
