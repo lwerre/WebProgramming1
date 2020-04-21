@@ -31,12 +31,12 @@ function Book(fm) {
             return 0; // flight, rh, no-->adventure
         } else if (this.input_power == 'flight' && this.input_character == 'nd' && this.input_animal == 'yes')
             return 0; //flight, nd, yes->adventure 
-        } /*else if (this.input_power == 'flight' && this.input_character == 'nd' && this.input_animal == 'no')
+        } else if (this.input_power == 'flight' && this.input_character == 'nd' && this.input_animal == 'no')
             return 1; //flight, nd, no-> mystery  
         } else if (this.input_power == 'knowledge' && this.input_character == 'nd' && this.input_animal == 'yes')
             return 1; //knowledge, nd, yes -> Mystery
         } else if (this.input_power == 'knowledge' && this.input_character == 'nd' && this.input_animal == 'no')
-            return 1; //knowledge, nd, no->mystery */
+            return 1; //knowledge, nd, no->mystery 
     }
         
 // Arrays
