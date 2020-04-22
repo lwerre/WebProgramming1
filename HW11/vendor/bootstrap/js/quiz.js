@@ -1,3 +1,5 @@
+var genre = ["Adventure", "Mystery", "Fantasy", "History"]
+
 function process_form() {
     // get form object
     var fm = document.getElementById("my_form");
