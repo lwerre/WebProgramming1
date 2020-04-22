@@ -21,7 +21,7 @@ function Book(fm) {
     this.input_power = fm.input_power.value;
     this.input_character = fm.input_character.value;
     this.input_animal = fm.input_animal.value;
-
+}
     //if else statements to run functions 
     this.sort = function () {
         // sort result based on input: 
