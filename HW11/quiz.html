@@ -18,22 +18,36 @@
   <!-- Custom styles for this template -->
   <link href="css/index.css" rel="stylesheet">
 
+  <!--font stylesheets-->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+
+
 <!--add javascript file "script.js"-->
-  <script type="text/javascript" src="js/quiz.js"></script>
+  <script type="text/javascript" src="js/BookQuest.js"></script>
 
     <style>
         .centered {
             position: absolute;
             text-align: center;
-            top: 44%;
+            top: 42%;
             left: 57%;
             transform: translate(-50%, -50%);
         }
-      
-      #my_form {
-        margin-top: 100px;
-      }
-      
+
+        body {
+          margin-top: 10px;
+          font-family: 'Merriweather', serif;
+          font-size: 16px;
+        }
+
+        footer {
+          margin-top: 30px;
+          font-family: 'Comic Neue', cursive;
+        }
+
+
     </style>
 </head>
 
@@ -57,7 +71,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Collapse Menu</button>
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -76,78 +90,98 @@
  
     <!--div for quiz-->
 <div class="fluid-container">
-        <div class="jumbotron text-center">
+       <!--image header-->
             <img src="images/book.jpg" alt="cat sitting on a pile of books">
             <div class="centered">
-                <h1>What should you read next?</h1>
-                <p>Please select one answer from each question and we will suggest a category and a book for you.</p>
+               
             </div>
         </div>
     </div>
 &nbsp;
 &nbsp;
 
-    <div class="container">
+    <div id="container">
+        <h1>Let's find out what you should read next!</h1>
+        <p>Select one answer from each question to get a personalized suggestion</p>
         <form id="my_form">
-            <div class="form-group">
-            <!--input_power-->
-                <label for="input_power">Choose a magical power</label>
-                <select class="form-control" id="input_power">
-                    <option value="none">Please select</option>
-                    <option value="flight">Flight</option>
-                    <option value="knowledge">Ultimate knowledge</option>
-                    <!--<option value="teleport">Teleportation</option>
-                    <option value="timetravel">Time Travel</option>-->
-                  </select>
+                       
+           <!--question 1 -->
+
+            
+            <h3>Do you like to play outdoors?</h3>
+
+            <!--outdoors: yes-->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="outdoors"><!--was id="friend"-->
+                <label class="form-check-label" for="outdoors">Yes</label>
             </div>
-            <!--input_character-->
-            <div class="form-group">
-                <label for="input_character">Which character would you like to be?</label>
-                <select class="form-control" id="input_character">
-                    <option value="none">Please select</option>
-                    <option value="nd">Nancy Drew</option>
-                    <option value="rh">Robin Hood</option>
-                    <option value="hp">Harry Potter</option>
-                    <option value="al">Abraham Lincoln</option>
-                </select>
+            <!--outdoors: no-->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="indoors"><!--was id="romance"-->
+                <label class="form-check-label" for="indoors">No</label>
+            </div>
+            
+                  
+            <!--question 2-->
+            <!-- animals-->
+            <h3>Do you like animals?</h3>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="animals"><!--was occasion1-->
+                <label class="form-check-label" for="animals">Yes</label>
             </div>
 
-            <!--input_animal-->
-            <div class="form-group">
-                <label for="input_animal">Do you like to read about animals?</label>
-                <div class="radio">
-                    <label><input type="radio" name="optradio" value="yes" id="input_animal">Yes</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio" value="no" id="input_animal">No</label>
-                </div>
+            <!--occasion2-->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="notAnimals"><!--was occasion2-->
+                <label class="form-check-label" for="notAnimals">No</label>
             </div>
-            <!--submit button-->
+
+            <!--question 3: choose a super power-->
+            <h3>Which super power would you rather have?</h3>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="flight"><!--was occasion1-->
+                <label class="form-check-label" for="flight">Flight</label>
+            </div>
+
+            <!--occasion2-->
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="knowledge"><!--was occasion2-->
+                <label class="form-check-label" for="knowledge">Ultimate Knowledge</label>
+            </div>
+
+
+
+
+            <!--submit-->
             <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button>
+            &nbsp;
+            &nbsp;
+
+
+            <!-- recommendation output area -->
+            <footer class="container">
+              <h2 id="output"></h2>
+            </footer>
+            
+            
+
         </form>
-    </div>
-    <br>
 
-    <!--output for quiz results-->
-    <div class = "container">
-        <!--<img id = "photo">-->
-        <h1 id = "genre"></h1>
-        <!--<p id = "att"></p>
-        <p id = "des"></p>-->
+
     </div>
 
-<!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
