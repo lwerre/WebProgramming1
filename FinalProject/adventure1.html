@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mystery</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/books.css" rel="stylesheet">
+
+  <!--fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+
+  <!--books.js script for image carousel-->
+  <script src="js/books.js"></script>
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Start Exploring </div>
+      <div class="list-group list-group-flush">
+        
+        
+        <a href="quiz.html" class="list-group-item list-group-item-action bg-light">Book Quest</a>
+        <a href="fantasy.html" class="list-group-item list-group-item-action bg-light" target="_blank">Fantasy Books</a>
+        <a href="history.html" class="list-group-item list-group-item-action bg-light" target="_blank">History Books</a>
+        <a href="adventure.html" class="list-group-item list-group-item-action bg-light" target="_blank">Adventure Books</a>
+        <a href="mystery.html" class="list-group-item list-group-item-action bg-light" target="_blank">Mystery Books</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a href="quiz.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+           </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4">Click on an image to purchase the book</h1>
+              
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+<!--wedgie & gizmo-->
+  <div class="column">
+    <div class="content">
+    <a href="https://www.amazon.com/Wedgie-Gizmo-Suzanne-Selfors-ebook/dp/B01MQPEAN0/ref=sr_1_1?crid=2RGCLXUVKZVOO&dchild=1&keywords=wedgie+and+gizmo&qid=1587830688&sprefix=wedgie%2Caps%2C208&sr=8-1" target="_blank">
+      <img src="images/wedgie.jpg" alt="girl writing a list" style="width:100%">
+      <h3>Wedgie & Gizmo by Suzanne Selfors</h3>
+      </a>
+      <!--description-->
+      <p>Wedgie is an excitable super hero dog, and Gizmo is his evil genius guinea pig nemesis. Will Wedgie be able to stop Gizmo from succeeding to take over the world?</p>
+    </div>
+  </div>
+  <!--sled dog school-->
+  <div class="column">
+    <div class="content">
+  <a href="https://www.amazon.com/Sled-School-Terry-Lynn-Johnson-ebook/dp/B01MU0FLE2/ref=sr_1_1?dchild=1&keywords=sled+dog+school&qid=1587831004&s=books&sr=1-1" target="_blank">
+      <img src="images/sleddog.jpg" alt="Lights" style="width:100%">
+      <h3>Sled Dog School by Terry Lynn Johnson</h3>
+      </a>
+      <p>Matt loves sled dogs, but isn't very good at math. He attempts to set up a sled dog school for extra credit. Will it be enough to get him out of trouble?</p>
+    </div>
+  </div>
+
+  <!--survival tails-->
+  <div class="column">
+    <div class="content">
+    <a href="https://www.amazon.com/Survival-Tails-Titanic-Katrina-Charman/dp/0316477834/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1587831289&sr=1-1" target="_blank">
+      <img src="images/survivaltails.jpg" alt="Nature" style="width:100%">
+      <h3>Survival Tails: The Titanic by Katrina Charman</h3>
+      </a>
+      <p>Mutt follows his owner on the RMS Titanic and goes off in search of his best friend. He is accompanied by a rat, the captain's cat and a few kittens. When the ship hits an iceberg, the animals must find their owners before the ship sinks.</p>
+    
+    </div>
+  </div>
+  
+</div>
+
+<!-- END MAIN -->
+</div>
+  <!-- /#wrapper -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+    //carousel functionality
+    $('.carousel').carousel({
+    interval: 2000 //starts cycling through slides
+    });
+  </script>
+
+</body>
+
+</html>

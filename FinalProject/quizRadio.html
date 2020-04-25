@@ -1,0 +1,207 @@
+<!--quiz inspired by book finder quiz at https://www.theguardian.com/childrens-books-site/2011/may/13/quiz-harry-potter-narnia-jacqueline-wilson-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Book Quest</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/books.css" rel="stylesheet">
+
+    <!--font stylesheets-->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Merriweather:wght@300;400&display=swap"
+        rel="stylesheet">
+
+
+    <!--add javascript file "script.js"-->
+    <script type="text/javascript" src="js/BookQuest.js"></script>
+
+    <style>
+        .centered {
+            position: absolute;
+            text-align: center;
+            top: 42%;
+            left: 57%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            margin-top: 10px;
+            font-family: 'Merriweather', serif;
+            font-size: 16px;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-family: 'Comic Neue', cursive;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Start Exploring </div>
+
+            <div class="list-group list-group-flush">
+
+                <a href="quiz.html" class="list-group-item list-group-item-action bg-light">Book Quest</a>
+                <a href="fantasy.html" class="list-group-item list-group-item-action bg-light" target="_blank">Fantasy
+                    Books</a>
+                <a href="history.html" class="list-group-item list-group-item-action bg-light" target="_blank">History
+                    Books</a>
+                <a href="adventure.html" class="list-group-item list-group-item-action bg-light"
+                    target="_blank">Adventure Books</a>
+                <a href="mystery.html" class="list-group-item list-group-item-action bg-light" target="_blank">Mystery
+                    Books</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <!--toggle menu-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a href="quiz.html">Home<span class="sr-only">(current)</span></a>
+                        </li>
+            </nav>
+
+            <!--main colum-->
+            <div class="container-fluid">
+                <!--main content-->
+
+                <!--div for quiz-->
+                <div class="fluid-container">
+                    <!--image header-->
+                    <img src="images/book.jpg" alt="cat sitting on a pile of books">
+                    <div class="centered">
+
+                    </div>
+                </div>
+            </div>
+            &nbsp;
+            &nbsp;
+
+            <div id="container">
+                <h1>Let's find out what you should read next!</h1>
+                <p>Select one answer from each question to get a personalized suggestion</p>
+                <form id="my_form">
+
+                    <!--question 1 -->
+
+
+                    <h3>Do you like to play outdoors?</h3>
+
+                    <!--outdoors: yes-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="outdoors" value="option1"
+                            checked>
+                        <label class="form-check-label" for="outdoors">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="indoors" value="option2">
+                        <label class="form-check-label" for="indoors">
+                            No
+                        </label>
+                    </div>
+
+
+                    <!--question 2-->
+                    <!-- animals-->
+                    <h3>Do you like animals?</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="animals" value="option1"
+                            checked>
+                        <label class="form-check-label" for="animals">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="notAnimals" value="option2">
+                        <label class="form-check-label" for="notAnimals">
+                            No
+                        </label>
+                    </div>
+
+                    <!--question 3: choose a super power-->
+                    <h3>Which super power would you rather have?</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="flight" value="option1"
+                            checked>
+                        <label class="form-check-label" for="flight">
+                            Flight
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="knowledge" value="option2">
+                        <label class="form-check-label" for="knowledge">
+                            Ultimate Knowledge
+                        </label>
+                    </div>
+                    
+                    <!--submit-->
+                    <button type="button" class="btn btn-primary" onclick="process_form()">Submit</button>
+                    &nbsp;
+                    &nbsp;
+
+
+                    <!-- recommendation output area -->
+                    <footer class="container">
+                        <h2 id="output">Visit the Books section to find these reads</h2>
+                    </footer>
+
+
+
+                </form>
+
+
+            </div>
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Menu Toggle Script -->
+            <script>
+                $("#menu-toggle").click(function (e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+
+                //carousel functionality
+                $('.carousel').carousel({
+                    interval: 2000 //starts cycling through slides
+                });
+            </script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mystery</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/books.css" rel="stylesheet">
+
+  <!--fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+
+  <!--books.js script for image carousel-->
+  <script src="js/books.js"></script>
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Start Exploring </div>
+      <div class="list-group list-group-flush">
+        
+        
+        <a href="quiz.html" class="list-group-item list-group-item-action bg-light">Book Quest</a>
+        <a href="fantasy.html" class="list-group-item list-group-item-action bg-light" target="_blank">Fantasy Books</a>
+        <a href="history.html" class="list-group-item list-group-item-action bg-light" target="_blank">History Books</a>
+        <a href="adventure.html" class="list-group-item list-group-item-action bg-light" target="_blank">Adventure Books</a>
+        <a href="mystery.html" class="list-group-item list-group-item-action bg-light" target="_blank">Mystery Books</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a href="quiz.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+           </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4">Click on an image to purchase the book</h1>
+              
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+<!--i survived the great molasses flood-->
+  <div class="column">
+    <div class="content">
+    <a href="https://www.amazon.com/Survived-Great-Molasses-Flood-1919-ebook/dp/B07M884TLQ/ref=sr_1_2?crid=3QM0NTEJE75QO&dchild=1&keywords=i+survived+books+series&qid=1587848837&sprefix=I+survived%2Caps%2C211&sr=8-2" target="_blank">
+      <img src="images/isurvived.jpg" alt="girl writing a list" style="width:100%">
+      <h3>I Survived the Great Molasses Flood by Lauren Tarshis</h3>
+      </a>
+      <!--description-->
+      <p>Carmen's family moved from Italy to Boston, and are living their new lives when an unusual disaster happens. A tank filled with molasses explodes near their neighborhood, sending dangerous waves of the sticky substance through the streets. Carmen is caught in the flood and must fight for her life. How will she do it?</p>
+    </div>
+  </div>
+  <!--ben franklin-->
+  <div class="column">
+    <div class="content">
+  <a href="https://www.amazon.com/Ben-Franklins-Bathroom-History-Pals/dp/1101934069/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1587831244&sr=1-1" target="_blank">
+      <img src="images/BenFranklin.jpg" alt="Lights" style="width:100%">
+      <h3>Ben Franklin's in my Bathroom! by Candace Fleming</h3>
+      </a>
+      <p>Benjamin Franklin accidentally travels into the future, to the 21st Century, and is amazed by all of the modern inventions. Olive and Nolan have to figure out how to return him to his own time before anyone figures out what has happened.</p>
+    </div>
+  </div>
+
+  <!--bicycle spy-->
+  <div class="column">
+    <div class="content">
+    <a href="https://www.amazon.com/Bicycle-Spy-Yona-Zeldis-McDonough/dp/0545850967/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1587831085&sr=1-1" target="_blank">
+      <img src="images/bicyclespy.jpg" alt="Nature" style="width:100%">
+      <h3>The Bicycle Spy by Yona Zeldis McDonough</h3>
+      </a>
+      <p>Marcel loves to ride his bicycle, and dreams about competing in the Tour De France, despite it being cancelled due to the German occupation of France. One day while making bicycle deliveries, he discovers a secret that will change his world. Will he be brave enough to join the resistance movement and save his friend and her family from danger?</p>
+    
+    </div>
+  </div>
+  
+</div>
+
+<!-- END MAIN -->
+</div>
+  <!-- /#wrapper -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+    //carousel functionality
+    $('.carousel').carousel({
+    interval: 2000 //starts cycling through slides
+    });
+  </script>
+
+</body>
+
+</html>

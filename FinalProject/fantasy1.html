@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mystery</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/books.css" rel="stylesheet">
+
+  <!--fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+
+  <!--books.js script for image carousel-->
+  <script src="js/books.js"></script>
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Start Exploring </div>
+      <div class="list-group list-group-flush">
+        
+        
+        <a href="quiz.html" class="list-group-item list-group-item-action bg-light">Book Quest</a>
+        <a href="fantasy.html" class="list-group-item list-group-item-action bg-light" target="_blank">Fantasy Books</a>
+        <a href="history.html" class="list-group-item list-group-item-action bg-light" target="_blank">History Books</a>
+        <a href="adventure.html" class="list-group-item list-group-item-action bg-light" target="_blank">Adventure Books</a>
+        <a href="mystery.html" class="list-group-item list-group-item-action bg-light" target="_blank">Mystery Books</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a href="quiz.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+           </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4">Click on an image to purchase the book</h1>
+              
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+<!--bob-->
+  <div class="column">
+    <div class="content">
+    <a href="https://www.amazon.com/Bob-Wendy-Mass-ebook/dp/B076B4RT7F/ref=sr_1_4?dchild=1&keywords=bob&qid=1587830231&sr=8-4" target="_blank">
+      <img src="images/bob.jpg" alt="girl writing a list" style="width:100%">
+      <h3>Bob by Wendy Mass & Rebecca Stead</h3>
+      </a>
+      <!--description-->
+      <p>Livy hasn't opened her bedroom closet door for five years, but when she finally does, a small green being wearing a chicken suit is there waiting for her to hep him figure out where he belongs.</p>
+    </div>
+  </div>
+  <!--tumble & blue-->
+  <div class="column">
+    <div class="content">
+   <a href="https://www.amazon.com/Tumble-Blue/dp/B06XP1DZFF/ref=sr_1_1?dchild=1&keywords=tumble+and+blue&qid=1587830760&sr=8-1" target="_blank">
+      <img src="images/tumble.jpg" alt="Lights" style="width:100%">
+      <h3>Tumble & Blue by Cassie Beasley</h3>
+      </a>
+      <p>Blue Montgomery and Tumble Wilson don't come from the luckiest of families. But as the Blood Moon arrives, their unlucky descendents return to face a mystical golden alligator in hopes that they will receive new fates.</p>
+    </div>
+  </div>
+
+  <!--dragon with a chocolate heart-->
+  <div class="column">
+    <div class="content">
+    <a href="https://www.amazon.com/Dragon-Chocolate-Heart-Stephanie-Burgis/dp/1681196956/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1587830940&sr=1-1" target="_blank">
+      <img src="images/Dragon.jpg" alt="Nature" style="width:100%">
+      <h3>The Dragon with a Chocolate Heart by Stephanie Burgis</h3>
+      </a>
+      <p>Lex is visiting his grandparents and cousin when he comes down with a mysterious rash. He's allergic to ghosts, and tries to avoid them but no such luck. One ghost needs his help to solve a mystery!</p>
+ 
+
+    
+    </div>
+  </div>
+  
+</div>
+
+<!-- END MAIN -->
+</div>
+  <!-- /#wrapper -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+    //carousel functionality
+    $('.carousel').carousel({
+    interval: 2000 //starts cycling through slides
+    });
+  </script>
+
+</body>
+
+</html>
