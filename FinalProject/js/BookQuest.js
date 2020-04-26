@@ -1,7 +1,7 @@
 //book quest.js for bookquest.html 
 
 // defining the object: Book Quest
-function Book(fm) { //was Flower
+function Book(fm) { 
     
     this.outdoors = fm.outdoors.checked; //likes to spend time outdoors
     this.indoors = fm.indoors.checked; //does not like to spend time outdoors
