@@ -1,7 +1,7 @@
 //book quest.js for bookquest.html 
 
 // defining the object: Book Quest
-function Book(fm) { 
+function Book(fm) { //was Flower
     
     this.outdoors = fm.outdoors.checked; //likes to spend time outdoors
     this.indoors = fm.indoors.checked; //does not like to spend time outdoors
@@ -61,10 +61,66 @@ function Book(fm) {
         if (this.indoors && this.animals && this.knowledge) {
             return "You might like books about <b>MYSTERY</b>. Here are some suggestions: <b>The Ambrose Deception by Emily Ecton, Annie's Life in Lists by Kristin Mahoney, Ghost Attack by David Lubar</b>";
             }
-        
-        //no choice for outdoors + animals + knowledge = try again
+        //define elements when one selection is missing
+        //no choice for outdoors + animals + flight = answer question 1
+        if (this.animals && this.flight) {
+            return "Uh-Oh. You missed a step. Please tell me if you like to play outdoors and try again."
+            }
+
+        //no choice for outdoors + animals + knowledge = answer question 1
         if (this.animals && this.knowledge) {
-            return "Uh-oh. You forgot to make a selection. Please answer the first question and try again."
+            return "Uh-Oh. You missed a step. Please tell me if you like to play outdoors and try again."
+            }
+
+        //no choice for outdoors + notAnimals + flight = answer question 1
+        if (this.notAnimals && this.flight) {
+            return "Uh-Oh. You missed a step. Please tell me if you like to play outdoors and try again."
+            }
+        
+        //no choice for outdoors + notAnimals + knowledge = answer question 1
+        if (this.notAnimals && this.knowledge) {
+            return "Uh-Oh. You missed a step. Please tell me if you like to play outdoors and try again."
+            }
+        
+        //outdoors + no choice for animals + flight = answer question 2
+        if (this.outdoors && this.flight) {
+            return "Uh-Oh. You missed a step. Please tell me if you like animals and try again."
+            }
+
+        //outdoors + no choice for animals + knowledge = answer question 2
+        if (this.outdoors && this.knowledge) {
+            return "Uh-Oh. You missed a step. Please tell me if you like animals and try again."
+            }
+
+        //indoors + no choice for animals + flight =  answer question 2
+        if (this.indoors && this.flight) {
+            return "Uh-Oh. You missed a step. Please tell me if you like animals and try again."
+            }
+        
+        //indoors + no choice for animals + knowledge
+        if (this.indoors && this.knowledge) {
+            return "Uh-Oh. You missed a step. Please tell me if you like animals and try again."
+            }
+        
+        //outdoors + animals + no power = choose a super power and try again.
+        if (this.outdoors && this.animals) {
+            return "Uh-Oh. You missed a step. Please select a super power and try again."
+        }
+
+        //outdoors + notAnimals + no power 
+        if (this.outdoors && this.notAnimals) {
+            return "Uh-Oh. You missed a step. Please select a super power and try again."
+        }
+        
+        //indoors + animals + no power = choose a super power and try again
+        if (this.indoors && this.animals) {
+            return "Uh-Oh. You missed a step. Please select a super power and try again."
+        }
+        
+        //indoors + notAnimals + no power = choose a super power 
+        if (this.indoors && this.notAnimals) {
+            return "Uh-Oh. You missed a step. Please select a super power and try again."
+        }
     }
 }
 
