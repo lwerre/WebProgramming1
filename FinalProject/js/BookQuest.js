@@ -1,7 +1,7 @@
 //book quest.js for bookquest.html 
 
 // defining the object: Book Quest
-function Book(fm) { //was Flower
+function Book(fm) { 
     
     this.outdoors = fm.outdoors.checked; //likes to spend time outdoors
     this.indoors = fm.indoors.checked; //does not like to spend time outdoors
@@ -61,6 +61,9 @@ function Book(fm) { //was Flower
         if (this.indoors && this.animals && this.knowledge) {
             return "You might like books about <b>MYSTERY</b>. Here are some suggestions: <b>The Ambrose Deception by Emily Ecton, Annie's Life in Lists by Kristin Mahoney, Ghost Attack by David Lubar</b>";
             }
+        
+        if (this.animals && this knowledge) {
+            return "Uh-oh. You forgot to make a selection. Please answer the first question and try again."
     }
 }
 
